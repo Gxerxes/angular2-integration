@@ -8,8 +8,8 @@ import {MD_CARD_DIRECTIVES} from "@angular2-material/card/card";
 import {DROPDOWN_DIRECTIVES} from "ng2-dropdown/index";
 import {BusyService, BusyDirective} from "angular2-busy/index";
 import {Subscription} from 'rxjs';
-import {TreeComponent} from "../components/tree.component";
-import {TreeModel, NodeEvent} from "../components/tree.types";
+import {TreeComponent} from "../components/my-tree/tree.component";
+import {TreeModel, NodeEvent} from "../components/my-tree/tree.types";
 // import {TreeComponent, TreeModel, NodeEvent} from "ng2-tree";
 // import MaskedInput from "angular2TextMask";
 
