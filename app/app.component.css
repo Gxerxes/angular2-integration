@@ -1,0 +1,71 @@
+.app-content {
+    padding: 20px;
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 94%;
+    bottom: 0;
+    line-height: 20px;
+    /*bottom: 0;
+    overflow-y: auto;*/
+}
+
+.app-sidenav {
+    min-width: 300px;
+    padding: 10px;
+}
+
+.app-icon-button {
+    box-shadow: none;
+    user-select: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    filter: none;
+    font-weight: normal;
+    height: auto;
+    line-height: inherit;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.secondary {
+    color: rgba(0, 0, 0, .54);
+}
+
+md-sidenav-layout {
+    background: rgba(0, 0, 0, .03);
+
+}
+
+md-toolbar {
+    height: 6%;
+    min-height: 6%; 
+}
+
+md-toolbar-row {
+    height: 6%;
+    min-height: 6%; 
+}
+
+.content-wapper {
+    position: fixed;
+    top: 20%;
+    bottom: 0;    
+}
+
+md-sidenav {
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+}

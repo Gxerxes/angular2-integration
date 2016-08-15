@@ -1,0 +1,71 @@
+<!--<div class="container">-->
+    <!--<h1>Math</h1>-->
+
+    <!--<div class="list-group-item col-md-3">-->
+        <!--<a [routerLink]="['Fractal']" class="list-group-item">Fractal</a>-->
+        <!--<a [routerLink]="['Matrix']" class="list-group-item">Matrix</a>-->
+        <!--<a [routerLink]="['Trigonometry']" class="list-group-item">Trigonometry</a>-->
+        <!--<a [routerLink]="['LineIntersection']" class="list-group-item">LineIntersection</a>-->
+        <!--<a [routerLink]="['Tweening']" class="list-group-item">Tweening</a>-->
+        <!--<a [routerLink]="['Easing']" class="list-group-item">Easing</a>-->
+    <!--</div>-->
+
+    <!--<div class="col-md-9">-->
+        <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<md-list>-->
+    <!--<md-list-item class="md-2-line"><a [routerLink]="['Fractal']" class="list-group-item">Fractal</a></md-list-item>-->
+    <!--<md-list-item><a [routerLink]="['Matrix']" class="list-group-item">Matrix</a></md-list-item>-->
+    <!--<md-list-item><a [routerLink]="['Trigonometry']" class="list-group-item">Trigonometry</a></md-list-item>-->
+    <!--<md-list-item><a [routerLink]="['LineIntersection']" class="list-group-item">LineIntersection</a></md-list-item>-->
+    <!--<md-list-item><a [routerLink]="['Tweening']" class="list-group-item">Tweening</a></md-list-item>-->
+    <!--<md-list-item><a [routerLink]="['Easing']" class="list-group-item">Easing</a></md-list-item>-->
+<!--</md-list>-->
+<!--<div class="col-md-9">-->
+    <!--<router-outlet></router-outlet>-->
+<!--</div>-->
+
+
+<md-sidenav-layout fullscreen>
+    <md-sidenav #sidenav>
+        <md-nav-list>
+            <md-icon md-list-icon>book</md-icon>
+            <a md-list-item [routerLink]="['Fractal']" (click)="sidenav.close()">Fractal</a>
+            <a md-list-item [routerLink]="['ThreePeriodic']" (click)="sidenav.close()">Periodic</a>
+            <a md-list-item [routerLink]="['Framework7']" (click)="sidenav.close()">Framework7</a>
+            <a md-list-item [routerLink]="['Matrix']" (click)="sidenav.close()">Matrix</a>
+            <a md-list-item [routerLink]="['Trigonometry']" (click)="sidenav.close()">Trigonometry</a>
+            <a md-list-item [routerLink]="['LineIntersection']" (click)="sidenav.close()">LineIntersection</a>
+            <a md-list-item [routerLink]="['Tweening']" (click)="sidenav.close()">Tweening</a>  
+            <a md-list-item [routerLink]="['Easing']" (click)="sidenav.close()">Easing</a>
+            <a md-list-item [routerLink]="['FindPrime']" (click)="sidenav.close()">Find Prime</a>
+            <a md-list-item [routerLink]="['WorldMap']" (click)="sidenav.close()">World Map</a>
+            <a md-list-item [routerLink]="['GoogleMaps']" (click)="sidenav.close()">Google Maps</a>
+            <a md-list-item [routerLink]="['VerletIntegration']" (click)="sidenav.close()">Verlet Integration</a>
+            <a md-list-item [routerLink]="['Revealjs']" (click)="sidenav.close()">Revealjs</a>
+            <!--<md-list-item class="md-2-line"><a [routerLink]="['Fractal']" class="list-group-item">Fractal</a></md-list-item>
+            <md-list-item><a [routerLink]="['Matrix']" class="list-group-item">Matrix</a></md-list-item>
+            <md-list-item><a [routerLink]="['Trigonometry']" class="list-group-item">Trigonometry</a></md-list-item>
+            <md-list-item><a [routerLink]="['LineIntersection']" class="list-group-item">LineIntersection</a></md-list-item>
+            <md-list-item><a [routerLink]="['Tweening']" class="list-group-item">Tweening</a></md-list-item>
+            <md-list-item><a [routerLink]="['Easing']" class="list-group-item">Easing</a></md-list-item>-->
+        </md-nav-list>
+    </md-sidenav>
+
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons">menu</i>
+        </button>
+    </md-toolbar>
+
+    <!--<md-sidenav align="end">-->
+        <!--Right-side panel along the left-side sidenav.-->
+    <!--</md-sidenav>-->
+
+    <div class="app-content">
+        Main content panel
+        <router-outlet></router-outlet>
+    </div>
+
+</md-sidenav-layout>

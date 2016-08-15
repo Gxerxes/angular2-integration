@@ -1,0 +1,56 @@
+<h1>matrix</h1>
+<md-card>
+    <md-card-header>123</md-card-header>
+</md-card>
+<md-input>123</md-input>
+<button md-button color="primary">Basic button</button>
+<button md-raised-button>Raised button</button>
+
+<div class="container">
+
+    <!-- a-style dropdown -->
+    <div class="dropdown" dropdown>
+        <a dropdown-open>My Heroes</a>
+        <ul class="dropdown-menu">
+            <li><a>Badman</a></li>
+            <li><a>Sadman</a></li>
+            <li><a>Lieman</a></li>
+        </ul>
+    </div>
+    <br/>
+
+    <!-- button dropdown -->
+    <div class="dropdown" dropdown>
+        <button class="btn btn-primary" dropdown-open>My Heroes</button>
+        <ul class="dropdown-menu">
+            <li><a>Badman</a></li>
+            <li><a>Sadman</a></li>
+            <li><a>Lieman</a></li>
+        </ul>
+    </div>
+    <br/>
+
+    <!-- dropdown with items that are not closing dropdown when you click on them -->
+    <div class="dropdown" dropdown>
+        <button class="btn btn-primary" dropdown-open>Not closable on items click</button>
+        <ul class="dropdown-menu" dropdown-not-closable-zone>
+            <li><a>This dropdown will</a></li>
+            <li><a>not be closed when you</a></li>
+            <li><a>select any its items</a></li>
+            <li><a>this allows you to put</a></li>
+            <li><a>dynamic content into it</a></li>
+        </ul>
+    </div>
+
+</div>
+
+<div>
+    <button md-fab>
+        add
+    </button>
+
+    <button md-mini-fab="">minus</button>
+</div>
+
+<tree [tree]="tree" (nodeSelected)="logEvent($event)"></tree>
+<canvas #myCanvas id="canvas"></canvas>
