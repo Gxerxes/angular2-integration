@@ -47,6 +47,7 @@
     "reveal-js": "^2.6.2",
     "reveal.js": "^3.3.0",
     "vue": "^1.0.26",
-    "reveal.js-menu": "^0.7.0"
+    "reveal.js-menu": "^0.7.0",
+    "lightbox2": "^2.8.2"
   }
 }

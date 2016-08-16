@@ -1,11 +1,7 @@
-/**
- * Created by LeonL64 on 8/11/2016.
- */
-
 
 import {
     Directive, DoCheck, ViewContainerRef, TemplateRef, ChangeDetectorRef, IterableDiffers,
-    ViewRef, IterableDiffer
+    ViewRef, IterableDiffer, Renderer, ApplicationRef, ComponentResolver, Injector, ElementRef
 } from "@angular/core";
 @Directive({
     selector: '[ngBookRepeat]',
@@ -18,12 +14,28 @@ export class ngBookRepeat implements DoCheck {
     private views: Map<any, ViewRef> = new Map<any, ViewRef>();
 
     constructor(private viewContainter: ViewContainerRef, private template: TemplateRef<any>,
-                private changeDetector: ChangeDetectorRef, private differs: IterableDiffers) {
+                private changeDetector: ChangeDetectorRef, private differs: IterableDiffers,
+                private renderer: Renderer, private applicationRef: ApplicationRef, 
+                private componentResolver: ComponentResolver, private injector: Injector, private elRef: ElementRef) {
         console.log('ng book repeat bound');
+        console.log('This is ViewContainerRef: ');
         console.log(this.viewContainter);
+        console.log('This is TemplateRef: ');
         console.log(this.template);
+        console.log('This is ChangeDetectorRef: ');
         console.log(this.changeDetector);
+        console.log('This is IterableDiffers');
         console.log(this.differs);
+        console.log('This is Renderer');
+        console.log(this.renderer);
+        console.log('This is ApplicationRef');
+        console.log(this.applicationRef);
+        console.log('This is ComponentResolver');
+        console.log(this.componentResolver);
+        console.log('This is Injector');
+        console.log(this.injector);
+        console.log('This is ElementRef');
+        console.log(this.elRef);
     }
 
     set ngBookRepeatOf(items){
