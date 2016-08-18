@@ -18,6 +18,7 @@ import {
     Request,
     Response
 } from "@angular/http";
+import {ErrorNotifierService} from "./error.notifier";
 
 @Injectable()
 export class CustomHttp extends Http {
@@ -28,8 +29,6 @@ export class CustomHttp extends Http {
     request(url: string | Request, options?: RequestOptionsArgs): Observable<any> {
         console.log('Before the request...');
         return super.request(url, options)
-            .retryWhen(error => error.delay(500))
-            .timeout(2000, 'Timeout has occurred')
             .catch((err) => {
                 if (err.status === 400 || err.status === 422 ) {
                     return Observable.throw(err);
@@ -37,6 +36,8 @@ export class CustomHttp extends Http {
                     this.errorService.notifyError(err);
                 }
             })
+            .retryWhen(error => error.delay(500))
+            .timeout(2000, new Error('Timeout has occurred'))
             .finally(() => {
                console.log('After the request');
             });
@@ -45,31 +46,35 @@ export class CustomHttp extends Http {
     get(url: string, options?: RequestOptionsArgs): Observable<any> {
         console.log('Before the request...');
         return super.get(url, options)
-            .catch((err) => {
-                console.log('On received an error...');
-                return Observable.throw(err);
+            .catch((err: any): any => {
+                if (err.status === 400 || err.status === 422) {
+                    console.log('On received an error...');
+                    return Observable.throw(err);
+                } else {
+                    this.errorService.notifyError(err);
+                    return Observable.empty();
+                }
             })
+            .retryWhen(error => error.delay(500))
+            .timeout(2000, new Error('delay exceeded'))
             .finally(() => {
                console.log('After the request')
             });
     }
-}
 
-export class ErrorNotifierService {
-    private errorObservable: Observable<any>;
-    private errorObserver: Observer<any>;
-    
-    constructor() {
-        this.errorObservable = Observable.create((observer: Observer<any>) => {
-            this.errorObserver = observer;
-        }).share();
-    }
-    
-    notifyError(error: any) {
-        this.errorObserver.next(error);
-    }
-    
-    onError(callback: (err: any) => void) {
-        this.errorObservable.subscribe(callback);
+    post(url: string, body: any, options?: RequestOptionsArgs): Observable<any> {
+        console.log('Before the request...');
+        return super.post(url, body, options)
+            .catch((err: any): any => {
+                if (err.status === 400 || err.status === 422) {
+                    return Observable.throw(err);
+                } else {
+                    this.errorService.notifyError(err);
+                    return Observable.empty();
+                }
+            })
+            .finally(() => {
+                console.log('After the request');
+            });
     }
 }
