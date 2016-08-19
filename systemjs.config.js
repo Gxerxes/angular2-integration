@@ -11,7 +11,8 @@
     'angular2-google-maps':       "node_modules/angular2-google-maps",
     'angular2TextMask':           "node_modules/angular2-text-mask/dist/angular2TextMask.js",
     'lodash':                     "node_modules/lodash/lodash.js",
-    'ng2-tree':                   "node_modules/ng2-tree"
+    'ng2-tree':                   "node_modules/ng2-tree",
+    'responsive-directives-angular2': 'node_modules/responsive-directives-angular2'
     // 'ng2-sweetalert2':            'node_modules/ng2-sweetalert2'
   };
   // packages tells the System loader how to load when no filename and/or no extension
@@ -22,7 +23,8 @@
     "ng2-dropdown":               { main: "index.js", defaultExtension: "js" },
     'angular2-busy':              { main: "index.js", defaultExtension: "js" },
     'angular2-google-maps/core':  { main: "index.js", defaultExtension: "js" },
-    'ng2-tree':                   { main: "index.js", defaultExtension: "js" }
+    'ng2-tree':                   { main: "index.js", defaultExtension: "js" },
+    'responsive-directives-angular2': { main: 'index.js', defaultExtention: 'js' }
     // 'ng2-sweetalert2':            { main: 'index.js',  defaultExtension: 'js'}
   };
 
