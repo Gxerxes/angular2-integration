@@ -1,8 +1,11 @@
 /**
  * Created by LeonL64 on 6/6/2016.
  */
-import {Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostBinding, DoCheck, ViewContainerRef, TemplateRef, ChangeDetectorRef, IterableDiffers,
-    ViewRef, IterableDiffer, Renderer, ApplicationRef, ComponentResolver, Injector} from '@angular/core';
+import {
+    Component, OnInit, AfterViewInit, ViewChild, ElementRef, HostBinding, DoCheck, ViewContainerRef, TemplateRef,
+    ChangeDetectorRef, IterableDiffers,
+    ViewRef, IterableDiffer, Renderer, ApplicationRef, ComponentResolver, Injector, ViewChildren, QueryList
+} from '@angular/core';
 import {ngBookRepeat} from "../directives/ngbookrepeat.directive";
 import {OnPushChangeDetectionSampleApp} from "../change-detection/onpush";
 import {ObservableChangeDetectionSampleApp} from "../change-detection/observables";
@@ -21,6 +24,11 @@ const MouseEvent = (global as any).MouseEvent as MouseEvent;
     directives: [ngBookRepeat, ObservableChangeDetectionSampleApp]
 })
 export class FractalComponent implements OnInit, AfterViewInit {
+    @ViewChild('myname') input: ElementRef;
+    @ViewChildren('div1,div2,div3') divs:QueryList<ElementRef>;
+
+    @ViewChild("myCanvas") myCanvas: ElementRef;
+
     context: CanvasRenderingContext2D;
     width: any;
     height: any;
@@ -51,6 +59,8 @@ export class FractalComponent implements OnInit, AfterViewInit {
             {name: 'Kate', age: 19}
         ];
 
+        // console.log(this.input.nativeElement.vale);
+        // console.log(this.divs);
         // console.log(this.route);
         // console.log(this.routes);
         console.log('This is ViewContainerRef: ');
@@ -86,13 +96,11 @@ export class FractalComponent implements OnInit, AfterViewInit {
         this.btnState = !this.btnState;
     }
 
-    @ViewChild("myCanvas") myCanvas: ElementRef;
-
     ngOnInit() {
         console.log(this.onFn);
-        console.log(typeof this.onFn)
+        console.log(typeof this.onFn);
         console.log(this.onChange);
-        console.log(typeof this.onChange)
+        console.log(typeof this.onChange);
     }
 
     ngAfterViewInit() {
@@ -102,6 +110,9 @@ export class FractalComponent implements OnInit, AfterViewInit {
         this.height = canvas.height = window.innerHeight;
 
         this.render();
+
+        console.log(this.input.nativeElement.value);
+        console.log(this.divs);
     }
 
     render() {
