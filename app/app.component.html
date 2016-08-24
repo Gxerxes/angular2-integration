@@ -44,6 +44,7 @@
             <a md-list-item [routerLink]="['google-maps']" (click)="sidenav.close()">Google Maps</a>
             <a md-list-item [routerLink]="['verlet-integration']" (click)="sidenav.close()">Verlet Integration</a>
             <a md-list-item [routerLink]="['revealjs']" (click)="sidenav.close()">Revealjs</a>
+            <a md-list-item [routerLink]="['hammerjs']" (click)="sidenav.close()">Hammerjs</a>
             <!--<md-list-item class="md-2-line"><a [routerLink]="['Fractal']" class="list-group-item">Fractal</a></md-list-item>
             <md-list-item><a [routerLink]="['Matrix']" class="list-group-item">Matrix</a></md-list-item>
             <md-list-item><a [routerLink]="['Trigonometry']" class="list-group-item">Trigonometry</a></md-list-item>
@@ -65,7 +66,9 @@
 
     <div class="app-content">
         Main content panel
-        <router-outlet></router-outlet>
+        <div style="position: relative">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
 </md-sidenav-layout>

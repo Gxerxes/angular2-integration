@@ -1,0 +1,107 @@
+//Media queries extracted from the Bootstrap GitHub repository from the following less files:-
+//
+//https://github.com/twbs/bootstrap/blob/v3.3.6/less/responsive-utilities.less
+//https://github.com/twbs/bootstrap/blob/v3.3.6/less/variables.less
+
+/*-------------------------Solution 1 --------------------------*/
+/* Extra Small Devices, .visible-xs-* */
+@media(max-width:767px){}
+
+/* Small Devices, .visible-sm-* */
+@media(min-width:768px) and (max-width:991px){}
+
+/* Medium Devices, .visible-md-* */
+@media(min-width:992px) and (max-width:1199px){}
+
+/* Large Devices, .visible-lg-* */
+@media(min-width:1200px){}
+
+
+
+/*-------------------------Solution 2 --------------------------*/
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+}
+
+/*-------------------------Solution 3 --------------------------*/
+/*---BS3---*/
+@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
+
+/*-------------------------Solution 4 --------------------------*/
+/*---BS4---*/
+@media(min-width:34em){}
+@media(min-width:48em){}
+@media(min-width:62em){}
+@media(min-width:75em){}
+
+
+/*-------------------------Solution 5 --------------------------*/
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+
+//xs only
+@media(max-width: @screen-xs-max) {
+
+}
+//small and up
+@media(min-width: @screen-sm-min) {
+
+}
+//sm only
+@media(min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+}
+//md and up
+@media(min-width: @screen-md-min) {
+
+}
+//md only
+@media(min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+}
+//lg and up
+@media(min-width: @screen-lg-min) {
+
+}
+
+
+/*-------------------------Solution 6 --------------------------*/
+.when-xs(@rules) { @media (max-width: @screen-xs-max) { @rules(); } }
+.when-sm(@rules) { @media (min-width: @screen-sm-min) { @rules(); } }
+.when-md(@rules) { @media (min-width: @screen-md-min) { @rules(); } }
+.when-lg(@rules) { @media (min-width: @screen-lg-min) { @rules(); } }
+
+//Example usage
+body {
+  .when-lg({
+    background-color: red;
+  });
+}

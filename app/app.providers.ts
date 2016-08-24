@@ -7,6 +7,8 @@ import {RouteConfig, Route, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 
 import {ResponsiveState, ResponsiveConfig, ResponsiveConfigInterface,RESPONSIVE_DIRECTIVES} from 'responsive-directives-angular2';
+import {HAMMER_GESTURE_CONFIG} from "@angular/platform-browser";
+import {HammerConfig} from "./configs/hammer.config";
 
 let config: ResponsiveConfigInterface = {
     breakPoints: {
@@ -21,11 +23,19 @@ let config: ResponsiveConfigInterface = {
 
 export const APP_PROVIDERS = [
     HTTP_PROVIDERS,
-    MdIconRegistry,
-    {
-        provide: ResponsiveConfig,
-        useFactory: () => new ResponsiveConfig(config)
-    },
+    MdIconRegistry
+    // {
+    //     provide: ResponsiveConfig,
+    //     useFactory: () => new ResponsiveConfig(config)
+    // },
+
+];
+
+export const RESPONSIVE_PROVIDERS = [
     ResponsiveState,
     provide(PLATFORM_DIRECTIVES, { useValue: [RESPONSIVE_DIRECTIVES], multi: true})
+];
+
+export const CUSTOM_PROVIDERS = [
+    provide(HAMMER_GESTURE_CONFIG, { useClass: HammerConfig})
 ];

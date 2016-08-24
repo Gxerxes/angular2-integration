@@ -1,0 +1,18 @@
+$screen-lg-min: 1200px;
+$screen-md-min: 992px;
+$screen-sm-min: 768px;
+$screen-sm-max: 767px;
+
+@mixin when-xs() {
+    @media (max-width: $screen-xs-max) {
+    @content;
+  }
+}
+
+@mixin when-sm() { @media (min-width: $screen-sm-min) { @content; } }
+@mixin when-md() { @media (min-width: $screen-md-min) { @content; } }
+@mixin when-lg() { @media (min-width: $screen-lg-min) { @content; } }
+
+@include when-md {
+  background-color: red;
+}

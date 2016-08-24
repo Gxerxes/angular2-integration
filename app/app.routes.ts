@@ -12,6 +12,7 @@ import {ThreePeriodicComponent} from "./three-periodic/three-periodic.component"
 import {GoogleMapsComponent} from "./google-maps/google-maps.component";
 import {Framework7Component} from "./framework7/framework7.component";
 import {RevealjsComponent} from "./revealjs/revealjs.component";
+import {HammerjsComponent} from "./hammerjs/hammerjs.component";
 
 const routes: RouterConfig = [
     {path: 'fractal', component: FractalComponent},
@@ -26,7 +27,8 @@ const routes: RouterConfig = [
     {path: 'worldmap', component: WorldMapComponent},
     {path: 'google-maps', component: GoogleMapsComponent},
     {path: 'verlet-integration', component: VerletIntegrationComponent},
-    {path: 'revealjs', component: RevealjsComponent}
+    {path: 'revealjs', component: RevealjsComponent},
+    {path: 'hammerjs', component: HammerjsComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [
