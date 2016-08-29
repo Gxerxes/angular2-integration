@@ -51,6 +51,7 @@
     "lightbox2": "^2.8.2",
     "alertifyjs": "^1.0.11",
     "alertify.js": "^0.3.11",
-    "materialize": "^0.97.7"
+    "materialize": "^0.97.7",
+    "css-circle-menu": "^2.0.0"
   }
 }
