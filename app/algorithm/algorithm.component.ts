@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {UtilsService} from "../utils/utils.service";
+import {SortingService} from "../services/sorting.service";
 
 @Component({
     moduleId: module.id,
     selector: 'my-app-find-prime',
-    templateUrl: './find-prime.component.html',
-    providers: [UtilsService]
+    templateUrl: './algorithm.component.html',
+    providers: [UtilsService, SortingService]
 })
-export class FindPrimeComponent implements OnInit {
-    constructor(private _utilsService: UtilsService) {
+export class AlgorithmComponent implements OnInit {
+
+    arr: any = [2, 5, 1, 0, 4];
+
+    constructor(public _utilsService: UtilsService, public sortingService: SortingService) {
 
     }
 
@@ -17,6 +21,9 @@ export class FindPrimeComponent implements OnInit {
         console.log(this._utilsService.getRandomIntArray(10));
         console.log(this._utilsService.getRandomIntArray(10));
         console.log(this._utilsService.getRandomIntArray(10));
+
+        console.log('------Bubble Sorting Start------');
+        console.log(this.sortingService.bubbleSort(this.arr));
     }
 
     isPrime(num: number): boolean {

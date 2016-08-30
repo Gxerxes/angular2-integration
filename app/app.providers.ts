@@ -9,6 +9,7 @@ import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 import {ResponsiveState, ResponsiveConfig, ResponsiveConfigInterface,RESPONSIVE_DIRECTIVES} from 'responsive-directives-angular2';
 import {HAMMER_GESTURE_CONFIG} from "@angular/platform-browser";
 import {HammerConfig} from "./configs/hammer.config";
+import {SortingService} from "./services/sorting.service";
 
 let config: ResponsiveConfigInterface = {
     breakPoints: {
@@ -37,5 +38,6 @@ export const RESPONSIVE_PROVIDERS = [
 ];
 
 export const CUSTOM_PROVIDERS = [
-    provide(HAMMER_GESTURE_CONFIG, { useClass: HammerConfig})
+    provide(HAMMER_GESTURE_CONFIG, { useClass: HammerConfig}),
+    SortingService
 ];

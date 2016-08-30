@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import { Route, ROUTER_DIRECTIVES} from '@angular/router';
 // import {RouteConfig, Route, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 import {TrigonometryComponent} from "./trigonometry/trigonometry.component";
@@ -12,7 +12,7 @@ import {MD_SIDENAV_DIRECTIVES} from "@angular2-material/sidenav/sidenav";
 import {MD_TOOLBAR_DIRECTIVES} from "@angular2-material/toolbar/toolbar";
 import { MdAnchor, MdButton } from '@angular2-material/button';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
-import {FindPrimeComponent} from "./algorithm/find-prime.component"
+import {AlgorithmComponent} from "./algorithm/algorithm.component"
 import {WorldMapComponent} from "./worldmap/world-map.component";
 import {VerletIntegrationComponent} from "./verlet-integration/verlet-integration.component";
 import {ThreePeriodicComponent} from "./three-periodic/three-periodic.component";
@@ -26,7 +26,8 @@ import {APP_PROVIDERS} from "./app.providers";
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css'],
     directives: [ROUTER_DIRECTIVES, MD_LIST_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_TOOLBAR_DIRECTIVES, MdButton, MdAnchor, MdIcon],
-    providers: [APP_PROVIDERS]
+    providers: [APP_PROVIDERS],
+    encapsulation: ViewEncapsulation.None
 })
 // @RouteConfig([
 //     new Route({path: '/fractal', component: FractalComponent, name:'Fractal', useAsDefault: true}),

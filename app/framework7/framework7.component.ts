@@ -1,4 +1,4 @@
-import {Component, AfterContentInit, OnInit} from '@angular/core';
+import {Component, AfterContentInit, OnInit, ViewEncapsulation} from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,11 @@ import {Component, AfterContentInit, OnInit} from '@angular/core';
     selector: 'my-framework7',
     providers: [],
     templateUrl: `framework7.component.html`,
-    directives: []
+    styles: [`
+        .app-content { padding: 0; }
+    `],
+    directives: [],
+    encapsulation: ViewEncapsulation.None
 })
 export class Framework7Component implements AfterContentInit, OnInit {
     name: any;

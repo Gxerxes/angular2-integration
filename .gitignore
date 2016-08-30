@@ -59,3 +59,4 @@ dist/
 bower_components/
 app/chat-example/node_modules/
 !app/chat-example/index.js
+demo/

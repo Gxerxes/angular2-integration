@@ -5,7 +5,7 @@ import {MatrixComponent} from "./matrix/matrix.component";
 import {LineIntersectionComponent} from "./line-intersection/line-intersection.component";
 import {TweeningComponent} from "./tweening/tweening.component";
 import {EasingComponent} from "./easing/easing.component";
-import {FindPrimeComponent} from "./algorithm/find-prime.component"
+import {AlgorithmComponent} from "./algorithm/algorithm.component"
 import {WorldMapComponent} from "./worldmap/world-map.component";
 import {VerletIntegrationComponent} from "./verlet-integration/verlet-integration.component";
 import {ThreePeriodicComponent} from "./three-periodic/three-periodic.component";
@@ -13,6 +13,7 @@ import {GoogleMapsComponent} from "./google-maps/google-maps.component";
 import {Framework7Component} from "./framework7/framework7.component";
 import {RevealjsComponent} from "./revealjs/revealjs.component";
 import {HammerjsComponent} from "./hammerjs/hammerjs.component";
+import {AngularMobileComponent} from "./angular-mobile/angular-mobile.component";
 
 const routes: RouterConfig = [
     {path: 'fractal', component: FractalComponent},
@@ -23,12 +24,13 @@ const routes: RouterConfig = [
     {path: 'matrix', component: MatrixComponent},
     {path: 'tweening', component: TweeningComponent},
     {path: 'easing', component: EasingComponent},
-    {path: 'algorithm', component: FindPrimeComponent},
+    {path: 'algorithm', component: AlgorithmComponent},
     {path: 'worldmap', component: WorldMapComponent},
     {path: 'google-maps', component: GoogleMapsComponent},
     {path: 'verlet-integration', component: VerletIntegrationComponent},
     {path: 'revealjs', component: RevealjsComponent},
-    {path: 'hammerjs', component: HammerjsComponent}
+    {path: 'hammerjs', component: HammerjsComponent},
+    {path: 'angularmobile', component: AngularMobileComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [
