@@ -1,16 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import {UtilsService} from "../utils/utils.service";
 import {SortingService} from "../services/sorting.service";
+import {TooltipDirective} from "../components/my-tooltip/tooltip.component";
+import {CardComponent} from "../components/my-card/card.component";
+import {DelayDirective} from "../directives/delay.directive";
 
 @Component({
     moduleId: module.id,
     selector: 'my-app-find-prime',
-    templateUrl: './algorithm.component.html',
-    providers: [UtilsService, SortingService]
+    // templateUrl: './algorithm.component.html',
+    providers: [UtilsService, SortingService],
+    directives: [TooltipDirective, CardComponent, DelayDirective],
+    styles: [
+        `
+        span {
+            color: blue;
+        }`
+    ],
+    template: `
+        <div *ngFor="let item of [1,2,3,4,5,6]" (click)="clickTest()">
+          <my-card *delay="500 * item; let loaded = loadTime;">
+                <div class="main">{{item}}</div>
+                <div class="sub">{{loaded | number:'1.4-4'}}</div>
+          </my-card>
+        </div>
+    `
 })
 export class AlgorithmComponent implements OnInit {
 
-    arr: any = [2, 5, 1, 0, 4];
+    arr: any = [7, 2, 5, 1, 6, 0, 9, 4, 10, 3, 8];
 
     constructor(public _utilsService: UtilsService, public sortingService: SortingService) {
 
@@ -24,6 +42,9 @@ export class AlgorithmComponent implements OnInit {
 
         console.log('------Bubble Sorting Start------');
         console.log(this.sortingService.bubbleSort(this.arr));
+
+        console.log('-------Quick Sorting Start------');
+        console.log(this.sortingService.quickSort(this.arr));
     }
 
     isPrime(num: number): boolean {
@@ -51,6 +72,8 @@ export class AlgorithmComponent implements OnInit {
         return { Prime: arrPrime, Count: count };
     }
 
-
+    clickTest() {
+        console.log('Embedded view work')
+    }
 
 }

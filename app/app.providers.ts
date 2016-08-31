@@ -10,6 +10,7 @@ import {ResponsiveState, ResponsiveConfig, ResponsiveConfigInterface,RESPONSIVE_
 import {HAMMER_GESTURE_CONFIG} from "@angular/platform-browser";
 import {HammerConfig} from "./configs/hammer.config";
 import {SortingService} from "./services/sorting.service";
+import {PositionService} from "./services/position.service";
 
 let config: ResponsiveConfigInterface = {
     breakPoints: {
@@ -39,5 +40,6 @@ export const RESPONSIVE_PROVIDERS = [
 
 export const CUSTOM_PROVIDERS = [
     provide(HAMMER_GESTURE_CONFIG, { useClass: HammerConfig}),
-    SortingService
+    SortingService,
+    PositionService
 ];
