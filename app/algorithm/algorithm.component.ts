@@ -5,6 +5,8 @@ import {TooltipDirective} from "../components/my-tooltip/tooltip.component";
 import {CardComponent} from "../components/my-card/card.component";
 import {DelayDirective} from "../directives/delay.directive";
 
+let $: any = window["$"];
+
 @Component({
     moduleId: module.id,
     selector: 'my-app-find-prime',
@@ -75,5 +77,7 @@ export class AlgorithmComponent implements OnInit {
     clickTest() {
         console.log('Embedded view work')
     }
+
+
 
 }

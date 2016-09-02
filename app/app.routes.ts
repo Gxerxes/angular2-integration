@@ -14,9 +14,10 @@ import {Framework7Component} from "./framework7/framework7.component";
 import {RevealjsComponent} from "./revealjs/revealjs.component";
 import {HammerjsComponent} from "./hammerjs/hammerjs.component";
 import {AngularMobileComponent} from "./angular-mobile/angular-mobile.component";
+import {JqueryMobileComponent} from "./jquery-mobile/jquerymobile.component";
 
 const routes: RouterConfig = [
-    {path: 'fractal', component: FractalComponent},
+    {path: '', component: FractalComponent},
     {path: 'three-periodic', component: ThreePeriodicComponent},
     {path: 'framework7', component: Framework7Component},
     {path: 'trigonometry', component: TrigonometryComponent},
@@ -30,7 +31,8 @@ const routes: RouterConfig = [
     {path: 'verlet-integration', component: VerletIntegrationComponent},
     {path: 'revealjs', component: RevealjsComponent},
     {path: 'hammerjs', component: HammerjsComponent},
-    {path: 'angularmobile', component: AngularMobileComponent}
+    {path: 'angular-mobile', component: AngularMobileComponent},
+    {path: 'jquery-mobile', component: JqueryMobileComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [

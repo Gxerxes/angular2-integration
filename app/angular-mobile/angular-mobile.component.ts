@@ -1,5 +1,6 @@
 import {Component, AfterContentInit, OnInit, ViewEncapsulation} from '@angular/core';
 
+let $: any = window["$"];
 
 @Component({
     moduleId: module.id,
@@ -45,4 +46,6 @@ export class AngularMobileComponent implements AfterContentInit, OnInit {
             console.log(err)
         });
     }
+
+
 }
