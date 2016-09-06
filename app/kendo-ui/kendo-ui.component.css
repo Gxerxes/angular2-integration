@@ -1,0 +1,12 @@
+.app-content {
+    padding: 0;
+}
+
+#touchSurface {
+    background: black;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    font-style: italic;
+    font-size: 12px;
+}

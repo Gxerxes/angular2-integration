@@ -15,6 +15,8 @@ import {RevealjsComponent} from "./revealjs/revealjs.component";
 import {HammerjsComponent} from "./hammerjs/hammerjs.component";
 import {AngularMobileComponent} from "./angular-mobile/angular-mobile.component";
 import {JqueryMobileComponent} from "./jquery-mobile/jquerymobile.component";
+import {FullCalendarComponent} from "./full-calendar/full-calendar.component";
+import {KendoUiComponent} from "./kendo-ui/kendo-ui.component";
 
 const routes: RouterConfig = [
     {path: '', component: FractalComponent},
@@ -32,7 +34,9 @@ const routes: RouterConfig = [
     {path: 'revealjs', component: RevealjsComponent},
     {path: 'hammerjs', component: HammerjsComponent},
     {path: 'angular-mobile', component: AngularMobileComponent},
-    {path: 'jquery-mobile', component: JqueryMobileComponent}
+    {path: 'jquery-mobile', component: JqueryMobileComponent},
+    {path: 'full-calendar', component: FullCalendarComponent},
+    {path: 'kendo-ui', component: KendoUiComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [
