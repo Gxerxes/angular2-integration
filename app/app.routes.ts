@@ -17,9 +17,11 @@ import {AngularMobileComponent} from "./angular-mobile/angular-mobile.component"
 import {JqueryMobileComponent} from "./jquery-mobile/jquerymobile.component";
 import {FullCalendarComponent} from "./full-calendar/full-calendar.component";
 import {KendoUiComponent} from "./kendo-ui/kendo-ui.component";
+import {HookComponent} from "./hook/hooks.component";
 
 const routes: RouterConfig = [
-    {path: '', component: FractalComponent},
+    {path: '', component: HookComponent},
+    {path: 'fractal', component: FractalComponent},
     {path: 'three-periodic', component: ThreePeriodicComponent},
     {path: 'framework7', component: Framework7Component},
     {path: 'trigonometry', component: TrigonometryComponent},

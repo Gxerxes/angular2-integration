@@ -66,19 +66,31 @@ export class SortingService {
         return array;
     }
 
-    selectionSort(array, comparator: (a, b) => any) {
-        let cmp = comparator || this.comparator;
-        let min;
-        let idx;
-        let temp;
+    selectionSort(array, comparator?: (a, b) => any) {
+        // var cmp = comparator || this.comparator;
+        var cmp = compare;
+        var min;
+        var idx;
+        var temp;
 
-        for(let i =0 ; i < array.length; i++) {
+        for (var i = 0 ; i < array.length; i+=1) {
             idx = i;
             min = array[i];
-            for(let j = i + 1; j < array.length; j++ ) {
-                
+            for (var j = i + 1; j < array.length; j+=1 ) {
+                if (cmp(min, array[j] > 0)) {
+                    min = array[j];
+                    idx = j;
+                }
             }
+            temp = array[i];
+            array[i] = min;
+            array[idx] = temp;
 
         }
+        return array;
     }
+}
+
+function compare(a, b) {
+    return a - b;
 }

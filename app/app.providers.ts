@@ -11,6 +11,7 @@ import {HAMMER_GESTURE_CONFIG} from "@angular/platform-browser";
 import {HammerConfig} from "./configs/hammer.config";
 import {SortingService} from "./services/sorting.service";
 import {PositionService} from "./services/position.service";
+import {NgConsoleDirective} from "./directives/ngconsole.directive";
 
 let config: ResponsiveConfigInterface = {
     breakPoints: {
@@ -35,7 +36,7 @@ export const APP_PROVIDERS = [
 
 export const RESPONSIVE_PROVIDERS = [
     ResponsiveState,
-    provide(PLATFORM_DIRECTIVES, { useValue: [RESPONSIVE_DIRECTIVES], multi: true})
+    provide(PLATFORM_DIRECTIVES, { useValue: [RESPONSIVE_DIRECTIVES, NgConsoleDirective], multi: true})
 ];
 
 export const CUSTOM_PROVIDERS = [

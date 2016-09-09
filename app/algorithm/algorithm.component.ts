@@ -4,15 +4,17 @@ import {SortingService} from "../services/sorting.service";
 import {TooltipDirective} from "../components/my-tooltip/tooltip.component";
 import {CardComponent} from "../components/my-card/card.component";
 import {DelayDirective} from "../directives/delay.directive";
+import {HookComponent} from "../hook/hooks.component";
 
 let $: any = window["$"];
+let _: any = window["_"];
 
 @Component({
     moduleId: module.id,
     selector: 'my-app-find-prime',
     // templateUrl: './algorithm.component.html',
     providers: [UtilsService, SortingService],
-    directives: [TooltipDirective, CardComponent, DelayDirective],
+    directives: [TooltipDirective, CardComponent, DelayDirective, HookComponent],
     styles: [
         `
         span {
@@ -42,11 +44,19 @@ export class AlgorithmComponent implements OnInit {
         console.log(this._utilsService.getRandomIntArray(10));
         console.log(this._utilsService.getRandomIntArray(10));
 
+        console.log(_.clone(this.arr));
+
         console.log('------Bubble Sorting Start------');
-        console.log(this.sortingService.bubbleSort(this.arr));
+        console.log(this.sortingService.bubbleSort(_.clone(this.arr)));
 
         console.log('-------Quick Sorting Start------');
-        console.log(this.sortingService.quickSort(this.arr));
+        console.log(this.sortingService.quickSort(_.clone(this.arr)));
+
+        console.log('-------Selection Sorting Start-------');
+        console.log(this.sortingService.selectionSort(_.clone(this.arr)));
+        console.log(selectionSort(_.clone(this.arr), compare));
+
+
     }
 
     isPrime(num: number): boolean {
@@ -77,7 +87,29 @@ export class AlgorithmComponent implements OnInit {
     clickTest() {
         console.log('Embedded view work')
     }
-
-
-
 }
+
+function compare(a, b) {
+    return a - b;
+}
+
+var selectionSort = function (array, cmp) {
+    cmp = cmp || compare;
+    var min;
+    var idx;
+    var temp;
+    for (var i = 0; i < array.length; i += 1) {
+        idx = i;
+        min = array[i];
+        for (var j = i + 1; j < array.length; j += 1) {
+            if (cmp(min, array[j]) > 0) {
+                min = array[j];
+                idx = j;
+            }
+        }
+        temp = array[i];
+        array[i] = min;
+        array[idx] = temp;
+    }
+    return array;
+};

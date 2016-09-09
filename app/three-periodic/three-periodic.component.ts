@@ -22,9 +22,7 @@ export class ThreePeriodicComponent implements OnInit, AfterViewInit {
 
     // @ViewChild("myCanvas") myCanvas: ElementRef;
 
-    constructor(public router: Router) {
-        //this.router.
-        console.log(this.router);
+    constructor() {
     }
 
     ngOnInit() {

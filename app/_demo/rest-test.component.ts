@@ -10,15 +10,16 @@ import {TodoRestClient} from "./TodoRestClient.component";
     selector: 'rest-test',
     viewProviders: [TodoRestClient],
     template: `
-	
+      <form>	
 	  <div class="row container">
 	  Post Number(enter 1): 
-	  <input type="text" placeholder="Post Number" [ngFormControl]="postNumber">
+	  <input type="text" placeholder="Post Number">
 	  <button (click)="fetchPost()">Fetch</button>
 	  </div>
 	  
 	  <div class="row container">Value: {{value}}
 	  </div>
+	  </form>
 	`
 })
 export class RestTestComponent {

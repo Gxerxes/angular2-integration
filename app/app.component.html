@@ -31,6 +31,7 @@
     <md-sidenav #sidenav>
         <md-nav-list>
             <md-icon md-list-icon>book</md-icon>
+            <a md-list-item [routerLink]="['hook']" (click)="sidenav.close()">Hook</a>
             <a md-list-item [routerLink]="['fractal']" (click)="sidenav.close()">Fractal</a>
             <a md-list-item [routerLink]="['three-periodic']" (click)="sidenav.close()">Periodic</a>
             <a md-list-item [routerLink]="['framework7']" (click)="sidenav.close()">Framework7</a>
